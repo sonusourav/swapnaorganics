@@ -77,3 +77,5 @@
     
 })(jQuery);
 
+var companyName = "Swapna Organics"
+
