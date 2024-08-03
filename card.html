@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Floating Card Example</title>
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<style>
+  /* Custom styles for floating card */
+  .floating-card {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+    max-width: 300px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+</style>
+
+</head>
+<body>
+
+<div class="container mt-5">
+  <!-- Button to trigger the floating card -->
+  <a class="btn btn-sm btn-primary" href="#" id="readMoreBtn"><i class="fa fa-plus text-white me-2"></i>Read More</a>
+
+  <!-- Floating card content -->
+  <div class="floating-card card" id="floatingCard">
+    <div class="card-body">
+      <h5 class="card-title">Card Title</h5>
+      <p class="card-text">Card content goes here...</p>
+      <button class="btn btn-sm btn-secondary" onclick="closeFloatingCard()">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap 5 JavaScript Bundle (Bootstrap + Popper.js) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Your additional JavaScript libraries -->
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/parallax/parallax.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+
+<!-- Your custom scripts -->
+<script src="js/main.js"></script>
+<script src="js/variables.js"></script>
+
+<script>
+  // Function to show the floating card
+  function showFloatingCard() {
+    var card = document.getElementById('floatingCard');
+    card.style.display = 'block';
+  }
+
+  // Function to close the floating card
+  function closeFloatingCard() {
+    var card = document.getElementById('floatingCard');
+    card.style.display = 'none';
+  }
+
+  // Event listener for the button click
+  var readMoreBtn = document.getElementById('readMoreBtn');
+  readMoreBtn.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    showFloatingCard(); // Show the floating card
+  });
+</script>
+
+</body>
+</html>
